@@ -29,7 +29,7 @@ def get_opt():
     opt.save_name = 'latest'
     opt.name = 'knn'
     # opt.dataset_path = './datasets/celeb-df-v2/images'
-    opt.dataset_path = './datasets/forensic/images'
+    opt.dataset_path = './datasets/forensic/scaled'
     opt.multiclass = False
     opt.resize_interpolation = 'bilinear'
     opt.load_size = -1
@@ -94,7 +94,7 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     p.add_argument('--model_path', '-mi', type=str,
-                   default='./src/baselines/face_forensics/classification/models/face_detection/xception/all_raw.p')
+                   default='./src/baselines/face_forensics/classification/models/face_detection/xception/all_c23.p')
     p.add_argument('--cuda', type=bool, default=True)
     args = p.parse_args()
     test(**vars(args))
