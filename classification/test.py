@@ -4,18 +4,12 @@ import gc
 import cv2
 import dlib
 import torch
-import sys
-import os
-
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from data.basic_dataset import BasicDataset
-from data.transforms import create_basic_transforms
-
-sys.path.append(os.getcwd())
-
 from detect_from_video import get_boundingbox, predict_with_model
+from src.model.transforms.transforms import create_basic_transforms
 from src.util.validate import calc_scores
 
 
