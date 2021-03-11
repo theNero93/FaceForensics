@@ -97,9 +97,9 @@ def predict_with_model(image, model, post_function=nn.Softmax(dim=1),
 
     # Cast to desired
     _, prediction = torch.max(output, 1)    # argmax
-    prediction = float(prediction.cpu().numpy())
+    prediction = float(output.squeeze().cpu().detach().numpy()[prediction])
 
-    return int(prediction), output
+    return prediction, output
 
 
 def test_full_image_network(video_path, model_path, output_path,
